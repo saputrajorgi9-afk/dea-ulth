@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HALAMAN */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    transition: 1s;
+}
+
+/* PAGE 1 */
+#page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 20px;
+}
+
+/* PAGE 2 */
+#page2 {
+    background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+    color: white;
+    left: 100%;
+    overflow-y: auto;
+}
+
+/* PAGE 3 */
+#page3 {
+    background: black;
+    color: white;
+    left: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* CONTAINER */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TEXT */
+h1 { font-size: 40px; }
+p { font-size: 18px; }
+
+/* BUTTON */
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+}
+
+/* FOTO */
+img {
+    width: 180px;
+    border-radius: 5%;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* PUJIAN */
+.pujian-wrapper {
+    padding: 40px 20px 80px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.pujian-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MUSIC BOX */
+.music-box {
+    text-align: center;
+}
+
+/* TEXT BOX */
+.text-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(255,105,180,0.2);
+}
+
+.text-box p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0;
+    color: #fff;
+    transform: translateY(20px);
+}
+
+.text-box p.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s ease;
+}
+
+.text-box .last {
+    font-weight: bold;
+    color: pink;
+}
+
+/* HATI */
+.heart {
+    position: fixed;
+    top: -20px;
+    color: red;
+    font-size: 16px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+
+    h1 { font-size: 26px; }
+    p { font-size: 14px; }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    img { width: 130px; }
+
+    .text-box {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .pujian-wrapper {
+        padding: 20px 15px 60px;
+    }
+
+    .card {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+    <div>
+        <h1>🎉 Happy Birthday 🎉</h1>
+        <p>Untuk kamu yang lahir 2 April 2007 di Bali 💖</p>
+        <p>Sekarang kamu sudah 19 tahun ✨</p>
+        <button onclick="nextPage()">Klik Aku ❤️</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <div class="container">
+        <h1>💖 Untuk Kamu 💖</h1>
+        <p>Aku sayang kamu ❤️</p>
+        <img src="011bc91fd929486eab2f3f65448cbd41.png">
+        <button onclick="goToPage3()">Klik Lagi 💌</button>
+    </div>
+
+    <div class="pujian-wrapper">
+        <h2 class="pujian-title">Hal yang aku suka dari kamu 💕</h2>
+        <div class="card">✨ Kamu itu aktif dan penuh energi</div>
+        <div class="card">😂 Kamu lucu banget</div>
+        <div class="card">🥺 Kamu imut</div>
+        <div class="card">😎 Cuek tapi unik</div>
+        <div class="card">💖 Spesial buat aku</div>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <div class="music-box">
+        <h1>🎶 Dengerin dulu ya 💖</h1>
+        <p>Klik play dulu sebelum lanjut...</p>
+
+        <button id="playBtn" onclick="playMusic()">Play Lagu 🎵</button>
+
+        <audio id="lagu">
+            <source src="Piche Kota - Bahagia Lagi Lirik Lagu.mp3" type="audio/mpeg">
+        </audio>
+
+        <div id="afterMusic" style="display:none;">
+            <div class="text-box">
+
+                <p>Aku cuma mau bilang makasih ya, Dea Arianti…<br>
+                karena kamu pernah hadir di hidup aku,<br>
+                walaupun mungkin cuma sebentar.</p>
+
+                <p>Tapi dari waktu yang sebentar itu,<br>
+                aku bisa lihat betapa luar biasanya kamu.<br>
+                Kamu itu orang yang aktif, ceria,<br>
+                dan punya cara sendiri buat bikin orang nyaman.</p>
+
+                <p>Lucu kamu, imut kamu,<br>
+                bahkan cuek kamu…<br>
+                semuanya punya tempat tersendiri di pikiran aku.</p>
+
+                <p>Dan hari ini,<br>
+                di hari ulang tahun kamu yang ke-19 🎂<br>
+                aku cuma bisa berharap…</p>
+
+                <p>Semoga kamu selalu bahagia ya, Dea Arianti…<br>
+                semoga semua yang kamu inginkan bisa tercapai,<br>
+                dan semoga kamu selalu dikelilingi orang-orang yang sayang sama kamu.</p>
+
+                <p>Terima kasih ya, Dea…<br>
+                udah pernah jadi bagian dari cerita hidup aku 💖</p>
+
+                <p class="last">Happy Birthday 🎉<br>
+                jaga diri baik-baik ya, Dea Arianti…</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function nextPage(){
+    page1.style.left = "-100%";
+    page2.style.left = "0";
+}
+
+function goToPage3(){
+    page2.style.left = "-100%";
+    page3.style.left = "0";
+}
+
+function playMusic(){
+    const audio = document.getElementById("lagu");
+    const btn = document.getElementById("playBtn");
+
+    audio.play();
+    btn.innerText = "Lagi Diputar... 🎶";
+    btn.disabled = true;
+
+    document.getElementById("afterMusic").style.display = "block";
+
+    const texts = document.querySelectorAll('.text-box p');
+    texts.forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add('show');
+        }, i * 2000);
+    });
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+document.querySelectorAll('.card').forEach(el => observer.observe(el));
+
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+}
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
